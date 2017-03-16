@@ -245,14 +245,5 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-# Gulp-built files
-app.js
-app.min.js
-vendor.js
-vendor.min.js
-bootstrap.css
-bootstrap-theme.css
-site.css
-site-theme.css
-vendor.css
 html/
+dist/*
