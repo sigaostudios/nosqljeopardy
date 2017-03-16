@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-8" style="height: 90vh">
+    <ngx-datatable 
+      class="material" 
+      [rows]="searchResults.value" 
+      [columns]="columns" 
+      [headerHeight]="50" 
+      [footerHeight]="50" 
+      [rowHeight]="50" 
+      [limit]="15">
+    </ngx-datatable>
+  </div>
+  <div class="col-md-4">
+
+    <div class="form-group">
+      <label for="searchString">Search</label>
+      <input type="text" class="form-control" id="searchString" placeholder="Search" [(ngModel)]="searchString">
+    </div>
+    <div class="form-group">
+      <label>Air Date</label><br>
+      <label for="fromDate">From</label>
+      <datepicker #dp [(ngModel)]="airDateStart" (navigate)="date = $event.next"></datepicker>
+      <label for="thruDate" style="margin-top:5px;">Thru</label>
+      <datepicker #dp [(ngModel)]="airDateEnd" (navigate)="date = $event.next"></datepicker>
+    </div>
+    <div class="form-group">
+      <label>Round </label><br/>
+      <label>
+          <input type="checkbox" value="Jeopardy!" [(ngModel)]="jeopardy">Jeopardy!
+        </label><br/>
+      <label>
+          <input type="checkbox" value="Double Jeopardy!" [(ngModel)]="doubleJeopardy">Double Jeopardy!
+        </label><br/>
+      <label>
+          <input type="checkbox" value="Final Jeopardy!" [(ngModel)]="finalJeopardy">Final Jeopardy!
+        </label>
+    </div>
+    <div class="form-group">
+      <span class="btn btn-large btn-info" (click)="getSearchResults()">Search!</span>
+    </div>
+
+  </div>
+</div>

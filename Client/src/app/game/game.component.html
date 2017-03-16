@@ -1,0 +1,21 @@
+<div class="board" *ngIf="!currentQuestion">
+  <ul class="categories">
+    <li *ngFor="let category of board.categories"><span class="category-name">{{category.categoryName}}</span>
+      <ul class="category">
+        <li *ngFor="let question of category.questions" (click)="setCurrentQuestion(question)"><span class="question-value">{{question.value}}</span></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="question-display" *ngIf="currentQuestion">
+ <span class="question" [innerHTML]="currentQuestion.question"></span><br/>
+ <span class="answer">{{currentQuestion.answer}}</span> <br/>
+ <span class="btn btn-large btn-info" (click)="clearCurrentQuestion()">Back &lt; </span>
+</div>
+
+<div class="search-footer">
+  <input type="number" required [(ngModel)]="showNumberField" />
+  <input type="text" required [(ngModel)]="roundField" />
+  <span class="btn btn-large btn-info" (click)="updateShow()">Update Show</span>
+</div>

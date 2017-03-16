@@ -1,0 +1,9 @@
+label {
+    color: white;
+}
+
+.form-group {
+    border-top: 1px solid lightgrey;
+    margin-top: 10px;
+    padding-top: 10px;
+}
